@@ -106,6 +106,46 @@ body{
     font-family: "DM Serif Text", serif;
 }
 
+.mail::before{
+    content: '';
+    display: inline-block;
+    margin-right: 5px;
+    height: 13px;
+    width: 13px;
+    background-image: url("Images/BE_AF_ASSET/mail.svg");
+    background-size: cover;
+}
+
+.intro button a::after{
+    content: '';
+    display: inline-block;
+    margin-left: 5px;
+    height: 13px;
+    width: 13px;
+    background-image: url("Images/BE_AF_ASSET/open.svg");
+    background-size: cover;
+}
+
+.bt_1::after{
+    content: '';
+    display: inline-block;
+    margin-left: 5px;
+    height: 13px;
+    width: 13px;
+    background-image: url("Images/BE_AF_ASSET/open.svg");
+    background-size: cover;
+}
+
+.bt_2::after{
+    content: '';
+    display: inline-block;
+    margin-left: 5px;
+    height: 13px;
+    width: 13px;
+    background-image: url("Images/BE_AF_ASSET/code-svgrepo-com.svg");
+    background-size: cover;
+}
+
 .imgset {
     display: flex;
     align-items: center;
@@ -469,10 +509,14 @@ body{
 
 footer {
     display: flex;
-    justify-content: space-around;
-    align-items: flex-start;
+    flex-direction: column;
     margin-top: 30px;
     background-color: #2fbcff;
+}
+
+.foot_cont {
+    display: flex;
+    justify-content: space-around;
 }
 
 footer h1 {
@@ -552,6 +596,56 @@ footer h1 {
     width: 14px;
     background-image: url("Images/location-pin-alt-1-svgrepo-com.svg");
     background-size: cover;
+}
+
+@media (max-width: 1030px) {
+    #img_1 {
+        position: absolute;
+        left: 5vw;
+        top: 170px;
+    }
+    
+    #img_2 {
+        position: absolute;
+        left: 5vw;
+        top: 370px;
+    }
+    
+    #img_3 {
+        position: absolute;
+        left: 5vw;
+        top: 570px;   
+    }
+    
+    #img_4 {
+        position: absolute;
+        left: 5vw;
+        top: 770px;   
+    }
+    
+    #img_5 {
+        position: absolute;
+        right: 5vw;
+        top: 170px;
+    }
+    
+    #img_6 {
+        position: absolute;
+        right: 5vw;
+        top: 370px;
+    }
+    
+    #img_7 {
+        position: absolute;
+        right: 5vw;
+        top: 570px;   
+    }
+    
+    #img_8 {
+        position: absolute;
+        right: 5vw;
+        top: 770px;   
+    }
 }
 
 @media (max-width:720px) {
@@ -707,6 +801,10 @@ footer h1 {
     }
 
     footer {
+        flex-direction: column;
+    }
+
+    .foot_cont {
         flex-direction: column;
     }
 
