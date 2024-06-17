@@ -40,4 +40,24 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+
+    const footLink = document.querySelectorAll('.foot_link');
+    footLink.forEach(function(link) {
+        link.addEventListener('click', function(event) {
+            event.preventDefault();
+            const targetId = this.getAttribute('href').substring(1);
+            const targetElement = document.getElementById(targetId);
+            if (targetElement) {
+                targetElement.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    });
+
+    const designer = document.querySelector('.designer');
+    if (designer) {
+        designer.addEventListener('click', function(event) {
+            event.preventDefault();
+            document.getElementById('home').scrollIntoView({ behavior: 'smooth' });
+        });
+    }
 });

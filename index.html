@@ -128,39 +128,51 @@
 
     <div id="projects">
         <h1>Projects</h1>
-        <div class="proj_cont">
-            <div class="pro_img" id="pro_img_1"></div>
-            <div class="pro_desc">
-                <h2>Dynamic Themed Sign-In Form</h2>
-                <p>A dynamic sign-in form with theme toggling, password visibility toggle, responsive design, and elegant styling for a personalized user experience.</p>
-                <div class="btn_set">
-                    <button class="bt_1"><a href="https://sanjayraajaa.github.io/Login_UI/" target="_blank">Open</a></button>
-                    <button class="bt_2"><a href="https://github.com/sanjayraajaa/Login_UI" target="_blank">View Code</a></button>
+        <div class="carousel">
+            <div class="carousel-inner">
+                <div class="proj_cont">
+                    <div class="pro_img" id="pro_img_1"></div>
+                    <div class="pro_desc">
+                        <h2>Dynamic Themed Sign-In Form</h2>
+                        <p>A dynamic sign-in form with theme toggling, password visibility toggle, responsive design, and elegant styling for a personalized user experience.</p>
+                        <div class="btn_set">
+                            <button class="bt_1"><a href="https://sanjayraajaa.github.io/Login_UI/" target="_blank">Open</a></button>
+                            <button class="bt_2"><a href="https://github.com/sanjayraajaa/Login_UI" target="_blank">Code</a></button>
+                        </div>
+                    </div>
                 </div>
+                <div class="proj_cont">
+                    <div class="pro_img" id="pro_img_2"></div>
+                    <div class="pro_desc">
+                        <h2>Interactive Login Form with Dynamic Password Visibility</h2>
+                        <p>An interactive login form featuring a dynamic password visibility toggle, floating labels for inputs, and responsive design.</p>
+                        <div class="btn_set">
+                            <button class="bt_1"><a href="https://sanjayraajaa.github.io/LOGIN_FORM_01/" target="_blank">Open</a></button>
+                            <button class="bt_2"><a href="https://github.com/sanjayraajaa/LOGIN_FORM_01" target="_blank">Code</a></button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Add more project items as needed -->
             </div>
         </div>
-        <div class="proj_cont">
-            <div class="pro_img" id="pro_img_2"></div>
-            <div class="pro_desc">
-                <h2>Interactive Login Form with Dynamic Password Visibility</h2>
-                <p>An interactive login form featuring a dynamic password visibility toggle, floating labels for inputs, and responsive design. The form includes a logo and is styled with elegant transitions, making it visually appealing and user-friendly.</p>
-                <div class="btn_set">
-                    <button class="bt_1"><a href="https://sanjayraajaa.github.io/LOGIN_FORM_01/" target="_blank">Open</a></button>
-                    <button class="bt_2"><a href="https://github.com/sanjayraajaa/LOGIN_FORM_01" target="_blank">View Code</a></button>
-                </div>
-            </div>
-        </div>
+        <button class="carousel-control-prev" aria-label="Previous"><img src="Images/left_btn.svg" alt="" class="left_btn_cs"></button>
+        <button class="carousel-control-next" aria-label="Next"><img src="Images/right_btn.svg" alt="" class="left_btn_cs"></button>
     </div>
+    
+    
+    
+    
+    
 
     <footer>
         <div class="foot_cont">
             <div class="navbar_foot">
                 <h1>Navigation</h1>
                 <ul>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#education">Education</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#projects">Projects</a></li>
+                    <li><a class="foot_link" href="#about">About</a></li>
+                    <li><a class="foot_link" href="#education">Education</a></li>
+                    <li><a class="foot_link" href="#skills">Skills</a></li>
+                    <li><a class="foot_link" href="#projects">Projects</a></li>
                 </ul>
             </div>
             <div class="contact">
@@ -181,5 +193,51 @@
         <div class="designer">Designed by <a href="#home">Sanjay Raja</a></div>
     </footer>
     <script src="script.js"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+    const carouselInner = document.querySelector('.carousel-inner');
+    const carouselItems = document.querySelectorAll('.proj_cont');
+    const totalItems = carouselItems.length;
+    let index = 0;
+    let autoPlayInterval;
+
+    function showSlide(newIndex) {
+        index = newIndex;
+        if (index >= totalItems) {
+            index = 0;
+        } else if (index < 0) {
+            index = totalItems - 1;
+        }
+        const offset = -index * 100;
+        carouselInner.style.transform = `translateX(${offset}%)`;
+    }
+
+    function showNextSlide() {
+        showSlide(index + 1);
+    }
+
+    function showPrevSlide() {
+        showSlide(index - 1);
+    }
+
+    document.querySelector('.carousel-control-next').addEventListener('click', function() {
+        clearInterval(autoPlayInterval);
+        showNextSlide();
+        autoPlay();
+    });
+
+    document.querySelector('.carousel-control-prev').addEventListener('click', function() {
+        clearInterval(autoPlayInterval);
+        showPrevSlide();
+        autoPlay();
+    });
+
+    function autoPlay() {
+        autoPlayInterval = setInterval(showNextSlide, 10000); // Change slide every 10 seconds
+    }
+
+    autoPlay();
+});
+    </script>        
 </body>
 </html>
