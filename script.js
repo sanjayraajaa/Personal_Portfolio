@@ -18,3 +18,26 @@ document.addEventListener("DOMContentLoaded", () => {
         navbar.classList.remove('active');
     });
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Smooth scroll for up_button
+    const upButton = document.querySelector('.up_button a');
+    if (upButton) {
+        upButton.addEventListener('click', function(event) {
+            event.preventDefault();
+            document.getElementById('home').scrollIntoView({ behavior: 'smooth' });
+        });
+    }
+
+    const mainLinks = document.querySelectorAll('.main_link');
+    mainLinks.forEach(function(link) {
+        link.addEventListener('click', function(event) {
+            event.preventDefault();
+            const targetId = this.getAttribute('href').substring(1);
+            const targetElement = document.getElementById(targetId);
+            if (targetElement) {
+                targetElement.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    });
+});

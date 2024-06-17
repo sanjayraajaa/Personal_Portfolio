@@ -456,7 +456,7 @@ body{
 }
 
 .btn_set button {
-    height: 35px;
+    height: 40px;
     width: 120px;
     background: #2fbcff;
     border-radius: 20px;
@@ -900,4 +900,8 @@ footer h1 {
         visibility: visible;
         opacity: 1;
     }
+}
+
+.nav_btn:hover {
+    cursor: pointer;
 }
