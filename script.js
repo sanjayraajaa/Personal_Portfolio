@@ -29,6 +29,14 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    const heading = document.getElementsByClassName("heading")[0];
+    if (heading) {
+        heading.addEventListener('click', function(event) {
+            event.preventDefault();
+            document.getElementById('home').scrollIntoView({ behavior: 'smooth' });
+        });
+    }
+
     const mainLinks = document.querySelectorAll('.main_link');
     mainLinks.forEach(function(link) {
         link.addEventListener('click', function(event) {
